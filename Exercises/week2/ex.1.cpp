@@ -1,16 +1,44 @@
+﻿
+#include "pch.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
- 
-int main ()
- 
+
+int main()
 {
-    int x1, y1, x2, y2;
-    cout << "Enter first point coordinates : " << endl;
-    cin >> x1 >> y1;
-    cout << "Enter second point coordinates : " << endl;
-    cin >> x2 >> y2;
- 
-    cout << "Distance between the two points : " << sqrt(pow(x1 - x2, 2) + pow (y1 - y2, 2));
- 
-    return 0;
+	int n;
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		int num;
+		cin >> num;
+
+		if (num < 2)
+		{
+			cout << "Not prime" << endl;
+			continue;
+		}
+
+		bool prime = true;
+
+		for (int j = 2; j <= sqrt(num); j++)
+		{
+			if (num % j == 0)
+			{
+				prime = false;
+				break;
+			}
+		}
+
+		if (prime)
+		{
+			cout << "Prime" << endl;
+		}
+		else
+		{
+			cout << "Not prime" << endl;
+		}
+	}
 }
+
