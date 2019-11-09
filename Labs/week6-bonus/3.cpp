@@ -6,22 +6,21 @@ using namespace std;
 
 int main()
 {
-	int n, symbol_count = 1, current_num = 1;
+	int n, current_num = 1;
 	cin >> n;
 
-	for (int i = 1; i <= n; i++)
+	for (int i = n - 1; i >= 0; i--)
 	{
-		for (int j = 0; j < n - i; j++)
+		for (int j = 0; j < i; j++)
 		{
 			cout << " ";
 		}
 
-		for (int j = 0; j < symbol_count; j++)
+		for (int j = 0; j < 2 * n - 1 - i * 2; j++)
 		{
 			cout << current_num++;
 		}
 
-		symbol_count += 2;
 		cout << endl;
 	}
 
