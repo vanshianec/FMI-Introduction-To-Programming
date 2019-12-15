@@ -1,40 +1,53 @@
 ﻿
 #include "pch.h"
 #include <iostream>
+
 using namespace std;
 
-void swapElements(int arr1[10], int arr2[10])
+void readArray(int a[], int n)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < n; i++)
 	{
-		int temp = arr1[i];
-		arr1[i] = arr2[i];
-		arr2[i] = temp;
+		cin >> a[i];
+	}
+}
+
+void printArray(int a[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << a[i] << " ";
+	}
+
+	cout << endl;
+}
+
+void swapElements(int a[], int b[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		int temp = *(a + i);
+		*(a + i) = *(b + i);
+		*(b + i) = temp;
 	}
 }
 
 int main()
 {
-	int arr1[10], arr2[10];
 
-	for (int i = 0; i < 10; i++)
-	{
-		cin >> arr1[i];
-		cin >> arr2[i];
-	}
+	int a[10], b[10], n;
+	cin >> n;
 
-	swapElements(arr1, arr2);
-
-	for (int i = 0; i < 10; i++)
-	{
-		cout << arr1[i] << " ";
-	}
-
+	readArray(a, n);
+	readArray(b, n);
 	cout << endl;
+	printArray(a, n);
+	printArray(b, n);
 
-	for (int i = 0; i < 10; i++)
-	{
-		cout << arr2[i] << " ";
-	}
+	swapElements(a, b, n);
+	printArray(a, n);
+	printArray(b, n);
+
 }
+
 

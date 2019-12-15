@@ -4,11 +4,11 @@
 
 using namespace std;
 
-void swap(int &a, int &b)
+void swap(int *a, int *b)
 {
-	int temp = a;
-	a = b;
-	b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 int main()
@@ -16,7 +16,10 @@ int main()
 	int a, b;
 	cin >> a >> b;
 
-	swap(a, b);
-
 	cout << a << " " << b << endl;
+	swap(&a, &b);
+	cout << a << " " << b << endl;
+
 }
+
+
